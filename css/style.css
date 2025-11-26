@@ -1,0 +1,396 @@
+:root {
+  --bg: #f5f7ff;
+  --bg-card: #ffffff;
+  --accent: #ffb703;
+  --accent-strong: #fb8500;
+  --accent-soft: #ffb70333;
+  --danger: #e63946;
+  --text: #22223b;
+  --text-muted: #6c728c;
+  --border: #d0d4e6;
+  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-main);
+  background: radial-gradient(circle at top, #ffffff 0, #edf1ff 55%);
+  color: var(--text);
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-header {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: #ffffffaa;
+  backdrop-filter: blur(10px);
+}
+
+.main-header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.main-footer {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.8rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  background: #ffffffaa;
+  backdrop-filter: blur(10px);
+}
+
+/* Cards y layout */
+
+.card {
+  background: var(--bg-card);
+  border-radius: 1.1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+  max-width: 1000px;
+  width: 100%;
+}
+
+.card-auth {
+  max-width: 420px;
+}
+
+.card-game {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+#screen-auth,
+#screen-profile,
+#screen-game,
+#screen-history {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Formularios */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+input,
+select {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: var(--text);
+  font: inherit;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+
+/* Botones */
+
+button {
+  font: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #fff;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.btn-secondary {
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  background: #edf1ff;
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.03);
+}
+
+.btn-secondary:hover {
+  background: #e0e6ff;
+}
+
+.btn-link {
+  background: transparent;
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  font-size: 0.85rem;
+}
+
+.btn-link:hover {
+  border-color: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.btn-link-inline {
+  background: transparent;
+  border: none;
+  color: var(--accent-strong);
+  padding: 0;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.btn-link-inline:hover {
+  text-decoration: underline;
+}
+
+.btn-danger {
+  color: var(--danger);
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* Texto */
+
+.text-small {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.error-msg {
+  min-height: 1rem;
+  font-size: 0.8rem;
+  color: var(--danger);
+}
+
+/* Perfil */
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 0.75rem;
+  align-items: flex-start;
+}
+
+.profile-block {
+  padding: 0.75rem 1rem;
+  border-radius: 0.9rem;
+  background: #f7f8ff;
+  border: 1px dashed #d3d9f1;
+}
+
+.profile-block-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* HUD del juego */
+
+.hud {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.5rem 1rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.9rem;
+  background: #f7f8ff;
+  border: 1px solid #dde2f4;
+  font-size: 0.9rem;
+}
+
+/* Canvas */
+
+.canvas-wrapper {
+  position: relative;
+  margin-top: 0.6rem;
+}
+
+#gameCanvas {
+  width: 100%;
+  border-radius: 0.9rem;
+  background: #e6f3ff;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+/* Overlay del juego */
+
+.game-overlay {
+  position: absolute;
+  inset: 0.75rem;
+  margin: auto;
+  max-width: 360px;
+  padding: 1rem 1.2rem;
+  border-radius: 1rem;
+  background: #ffffffee;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 38px rgba(15, 23, 42, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  align-items: center;
+  text-align: center;
+}
+
+.overlay-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+/* Historial */
+
+.history-wrapper {
+  max-height: 360px;
+  overflow: auto;
+  margin: 0.75rem 0;
+  border-radius: 0.9rem;
+  border: 1px solid var(--border);
+  background: #f9f9ff;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.history-table thead {
+  background: #e2e6ff;
+  position: sticky;
+  top: 0;
+}
+
+.history-table th,
+.history-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #d8def6;
+}
+
+.history-table tbody tr:nth-child(even) {
+  background: #f3f4ff;
+}
+
+.history-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Nav */
+
+#nav-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1.2rem;
+  }
+}
+
+
+.form-group-inline {
+  margin-top: 0.75rem;
+}
+
+.inline-color-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.inline-color-wrapper input[type="color"] {
+  padding: 0;
+  width: 42px;
+  height: 32px;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+
+.btn-small {
+  padding: 0.35rem 0.8rem;
+  font-size: 0.8rem;
+}
